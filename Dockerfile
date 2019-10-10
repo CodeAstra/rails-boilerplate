@@ -11,8 +11,8 @@ RUN gem update bundler
 RUN npm i -g yarn
 
 # Setup App
-RUN mkdir -p /jarvis
-WORKDIR /jarvis
+RUN mkdir -p /boilerplate
+WORKDIR /boilerplate
 COPY . .
 
 COPY ./docker/app/docker-entrypoint.sh /
@@ -22,4 +22,4 @@ ENTRYPOINT ["/docker-entrypoint.sh"]
 ENV BUNDLE_PATH=/bundle \
 BUNDLE_BIN=/bundle/bin \
 GEM_HOME=/bundle
-ENV PATH="${BUNDLE_BIN}:${PATH}" 
+ENV PATH="${BUNDLE_BIN}:${PATH}"
