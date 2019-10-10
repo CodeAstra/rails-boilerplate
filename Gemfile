@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+# dotenv gem need to be listed earlier than the gems that require dotenv
+gem 'dotenv-rails', groups: [:development, :test], require: 'dotenv/rails-now'
+
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
